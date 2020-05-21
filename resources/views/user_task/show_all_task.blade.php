@@ -76,23 +76,25 @@ function selectTags(){
          let length = res.data.length;
             if (res.data.length > 0) {
                 // $('#tbody-set').html('');
-                // let html = null;
+                var html = null;
+                var SNo = 1;
             	for(let i=0; i<length; i++){
                     // alert(res.data[i]['title']);
-         //             html = html+
-							  //  ` 
-								 // <tr>
-								 //   <td>${SNo++}</td>
-								 //   <td>${res.data[i]['title']}</td> 
-								 //   <td>${res.data[i]['long_desc']}</td>
-								 //   <td>${res.data[i]['featured_image']}</td>
-								 //   <td>${res.data[i]['slug']}view</td>
-								 // </tr>
-							  //  `;
+                     html = html+
+							   ` 
+								 <tr>
+								   <td>${SNo++}</td>
+								   <td>${res.data[i]['title']}</td> 
+								   <td>${res.data[i]['long_desc']}</td>
+								   <td><img src="{{url('public/images')}}/${res.data[i]['featured_image']}" width="100" height
+								   "100"></td>
+								   <td><a href="{{url('view-post')}}/${res.data[i]['slug']}">View</a></td>
+								 </tr>
+							   `;
             	}
-            	// $('#tbody-set').html(html);
+            	$('#tbody-set').html(html);
             } else {
-            	$('#tbody-set').show();
+            	$('#tbody-set').html('');
                    // alert(res.msg);
             }
         },
