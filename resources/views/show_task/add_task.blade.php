@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
-
+<!-- this is the identify the voice in dynmic ways -->
+  <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 <div id="wrapper">
 	<div id="page" class="container">
 		<div id="content" class="setwidth">
@@ -8,6 +9,9 @@
 			<div class="alert alert-success alert-block">
 				<button type="button" class="close" data-dismiss="alert">×</button>	
 			        <strong>{{ $message }}</strong>
+			        <script type="text/javascript">
+			        	 responsiveVoice.speak('You are save Successfully data');
+			        </script>
 			</div>
 			@endif
 			<div class="title">
